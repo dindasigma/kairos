@@ -31,21 +31,21 @@
 		extend(this.options, options);
 		this.DOM = {};
 		this.DOM.img = this.el.querySelector('.content__img');
-		this.DOM.title = this.el.querySelector('.content__title');
+		this.DOM.year = this.el.querySelector('.content__year');
 		this._initEvents();
 	}
 
 	TiltObj.prototype.options = {
 		movement: {
 			img : { translation : {x: -40, y: -40} },
-			title : { translation : {x: 20, y: 20} },
+			year : { translation : {x: 20, y: 20} },
 		}
 	};
 
 	TiltObj.prototype._initEvents = function() {
 		this.mouseenterFn = (ev) => {
 			anime.remove(this.DOM.img);
-			anime.remove(this.DOM.title);
+			anime.remove(this.DOM.year);
 		};
 		
 		this.mousemoveFn = (ev) => {
@@ -55,7 +55,7 @@
 		this.mouseleaveFn = (ev) => {
 			requestAnimationFrame(() => {
 				anime({
-					targets: [this.DOM.img, this.DOM.title],
+					targets: [this.DOM.img, this.DOM.year],
 					duration: 1500,
 					easing: 'easeOutElastic',
 					elasticity: 400,
@@ -82,7 +82,7 @@
 		// Movement settings for the animatable elements.
 		const t = {
 			img: this.options.movement.img.translation,
-			title: this.options.movement.title.translation,
+			year: this.options.movement.year.translation,
 		};
 			
 		const transforms = {
@@ -90,13 +90,13 @@
 				x: (-1*t.img.x - t.img.x)/bounds.width*relmousepos.x + t.img.x,
 				y: (-1*t.img.y - t.img.y)/bounds.height*relmousepos.y + t.img.y
 			},
-			title : {
-				x: (-1*t.title.x - t.title.x)/bounds.width*relmousepos.x + t.title.x,
-				y: (-1*t.title.y - t.title.y)/bounds.height*relmousepos.y + t.title.y
+			year : {
+				x: (-1*t.year.x - t.year.x)/bounds.width*relmousepos.x + t.year.x,
+				y: (-1*t.year.y - t.year.y)/bounds.height*relmousepos.y + t.year.y
 			}
 		};
 		this.DOM.img.style.WebkitTransform = this.DOM.img.style.transform = 'translateX(' + transforms.img.x + 'px) translateY(' + transforms.img.y + 'px)';
-		this.DOM.title.style.WebkitTransform = this.DOM.title.style.transform = 'translateX(' + transforms.title.x + 'px) translateY(' + transforms.title.y + 'px)';
+		this.DOM.year.style.WebkitTransform = this.DOM.year.style.transform = 'translateX(' + transforms.year.x + 'px) translateY(' + transforms.year.y + 'px)';
 	};
 
 	const init = function() {

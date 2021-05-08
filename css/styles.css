@@ -28,11 +28,13 @@ body {
 	--background-color: #1d1b22;
 	--background-color-2: #03b9f1;
 	--link-color: #03b9f1;
-	--link-hover-color: #fff;
+	--link-hover-color: #D1D5DB;
 
-	--color-title: #ffffff;
+	--color-title: #03b9f1;
 	--font-title: 'moret', serif;
 	--color-people: #1d1b22;
+
+	--blendmode-title: difference;
 
 	font-family: 'Libre Baskerville', serif;
 	font-weight: 400;
@@ -178,6 +180,8 @@ a:focus {
 	margin: 0;
 	z-index: 10;
 	cursor: default;
+	will-change: transform;
+	mix-blend-mode: var(--blendmode-title);
 	color: transparent;
 	-webkit-text-stroke: 1px var(--color-title);
 	text-stroke: 1px var(--color-title);
