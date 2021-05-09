@@ -191,15 +191,18 @@ a:focus {
 
 .content__people {
 	grid-area: people;
-	-webkit-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
 	padding: 1em;
 	text-align: center;
 	cursor: default;
 	z-index: 20;
+  	color: var(--color-people);
+}
+
+.content__people.animate {
 	animation: morph 3s linear infinite;
   	animation-delay: 400ms;
-  	color: var(--color-people);
 }
 
 .content__people span {
@@ -226,6 +229,11 @@ a:focus {
 
 .content--layout-1 .content__year {
 	margin-left: 1em;
+}
+
+.content--layout-1 .content__people {
+	justify-self: start;
+	align-self: start;
 }
 
 /* layout-2 */
@@ -274,6 +282,11 @@ a:focus {
 	margin-left: 0.7em;
 }
 
+.content--layout-3 .content__people {
+	justify-self: start;
+	align-self: end;
+}
+
 /* layout-4 */
 
 .content--layout-4 {
@@ -289,7 +302,7 @@ a:focus {
 
 .content--layout-4 .content__people {
 	justify-self: start;
-	align-self: start;
+	align-self: end;
 }
 
 @media screen and (max-width: 50em) {
@@ -505,38 +518,47 @@ a:focus {
 }
 
 .bubble{
-  background-image: linear-gradient(120deg, #aaa7a7 0%, #ffffff 100%);
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
-  opacity: 0.8;
-  width: 300px;
-  height: 300px;
-  animation: morph 3s linear infinite; 
-  transform-style: preserve-3d;
-  outline: 1px solid transparent;
-  will-change: border-radius;
+	background-image: linear-gradient(120deg, #aaa7a7 0%, #ffffff 100%);
+	border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+	opacity: 0.8;
+	width: 300px;
+	height: 300px;
+	transform-style: preserve-3d;
+	outline: 1px solid transparent;
+	will-change: border-radius;
+
 }
 
 .bubble:before,
 .bubble:after{
-  content: '';
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  left: 0; top: 0;
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-  box-shadow: 5px 5px 89px rgba(170, 167, 167, 0.21);
-  will-change: border-radius, transform, opacity;
-  animation-delay: 200ms;
-  background-image: linear-gradient(120deg, rgba(170,167,167,.55) 0%, rgba(170,167,167,.89) 100%);
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 0; top: 0;
+	border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+	box-shadow: 5px 5px 89px rgba(170, 167, 167, 0.21);
+	will-change: border-radius, transform, opacity;
+	animation-delay: 200ms;
+	background-image: linear-gradient(120deg, rgba(170,167,167,.55) 0%, rgba(170,167,167,.89) 100%);
 }
 
 .bubble:before{
-  animation: morph 3s linear infinite;
-  opacity: .21;
-  animation-duration: 1.5s;
+	opacity: .21;
+
+}
+
+.bubble.animate {
+	animation: morph 3s linear infinite; 
+	
+}
+
+.bubble.animate:before {
+	animation: morph 3s linear infinite;
+	animation-duration: 1.5s;
 }
 
 @keyframes morph{

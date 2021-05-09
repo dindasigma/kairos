@@ -168,6 +168,12 @@ $(window).scroll(function() {
 		if ($(this).position().top <= scrollDistance) {
 			$('.nav button.nav__item--current').removeClass('nav__item--current');
 			$('.nav button').eq(i).addClass('nav__item--current');
+
+			$('.bubble').removeClass('animate');
+			$('.bubble').eq(i).addClass('animate');
+
+			$('.content__people').removeClass('animate');
+			$('.content__people').eq(i).addClass('animate');
 		}
 	});
 }).scroll();
