@@ -450,7 +450,7 @@ a:focus {
 	height: 2px;
 	margin: -1px 0 0 0;
 	opacity: 0.5;
-	background: #fff;
+	background: var(--text-color);
 	-webkit-transform: scale3d(0.5,1,1);
 	transform: scale3d(0.5,1,1);
 	-webkit-transform-origin: 0% 50%;
@@ -518,7 +518,7 @@ a:focus {
 }
 
 .content--footer a:hover {
-	color: #ffffff;
+	color: var(--link-hover-color);
 }
 
 .bubble{
