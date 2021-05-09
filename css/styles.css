@@ -506,6 +506,7 @@ a:focus {
 	padding: 2em 5em;
 	color: #888888;
 	font-size: 80%;
+	line-height: 1.5;
 }
 
 .content--footer a {
