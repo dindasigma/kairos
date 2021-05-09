@@ -102,8 +102,6 @@
 	const init = function() {
 		imagesLoaded(document.body, () => {
 			Array.from(document.querySelectorAll('.content--layout')).forEach(el => new TiltObj(el));
-			// Remove loading class from body
-			document.body.classList.remove('loading');
 		});
 	}
 
