@@ -32,7 +32,7 @@ body {
 
 	--color-title: #03b9f1;
 	--font-title: 'moret', serif;
-	--color-people: #1d1b22;
+	--color-people: #4b4a4e;
 
 	--blendmode-title: difference;
 
@@ -154,7 +154,7 @@ a:focus {
 	justify-content: center;
 	align-content: center;
 	grid-template-columns: 150px 150px 150px 150px; 
-	grid-template-rows: 150px 75px 75px;
+	grid-template-rows: 50px 150px 75px;
 	grid-template-areas:	"... title title title"
 							"people ... desc desc"
 							"people ... link link";
@@ -198,6 +198,7 @@ a:focus {
 	cursor: default;
 	z-index: 20;
   	color: var(--color-people);
+	font-size: 90%;
 }
 
 .content__people.animate {
@@ -206,7 +207,7 @@ a:focus {
 }
 
 .content__people span {
-	font-size: 80%;
+	font-size: 70%;
 	display: block;
 }
 
@@ -214,7 +215,7 @@ a:focus {
 	grid-area: desc;
 	margin: 0;
 	z-index: 10;
-	padding: 0 1em;
+	padding: 8em 1em 0 1em;
 	cursor: default;
 }
 
@@ -263,7 +264,7 @@ a:focus {
 
 /* layout-3 */
 .content--layout-3 {
-	grid-template-rows: 75px 75px 150px;
+	grid-template-rows: 50px 75px 150px;
 	grid-template-areas:	"... ... desc desc"
 							"people title title title"
 							"people ... link link";
